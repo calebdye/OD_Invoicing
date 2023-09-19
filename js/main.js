@@ -5,10 +5,10 @@ angular.module('invoicing', [])
 
 // The invoice displayed when the user first uses the app
 .constant('DEFAULT_INVOICE', {
-  tax: 13.00,
+  tax: 0.00,
   invoice_number: 10,
   customer_info: {
-    name: 'Mr. John Doe',
+    name: 'Name',
     web_link: 'John Doe Designs Inc.',
     address1: '1 Infinite Loop',
     address2: 'Cupertino, California, US',
@@ -160,6 +160,7 @@ angular.module('invoicing', [])
     LocalStorage.clearLogo();
   };
 
+
   // Triggers the logo chooser click event
   $scope.editLogo = function() {
     // angular.element('#imgInp').trigger('click');
@@ -239,3 +240,13 @@ angular.module('invoicing', [])
   });
 
 }])
+
+  //toggle paid
+  function togglePaid() {
+    var x = document.getElementById("paid");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }

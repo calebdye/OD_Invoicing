@@ -17,12 +17,12 @@
       </div>
     </div>
     <div class="row branding">
-      <div class="col-xs-6">
+      <div class="col-xs-4">
         <div class="invoice-number-container">
           <label for="invoice-number">Invoice #</label><input type="text" id="invoice-number" ng-model="invoice.invoice_number" />
         </div>
       </div>
-      <div class="col-xs-6 logo-container">
+      <div class="col-xs-4 logo-container">
         <input type="file" id="imgInp" />
         <img ng-hide="logoRemoved" id="company_logo" ng-src="{{ logo }}" alt="your image" width="300" />
         <div>
@@ -32,6 +32,17 @@
           </div>
         </div>
       </div>
+
+      <div class="col-xs-4 paid" >
+        <!-- <input type="file" id="imgInp" /> -->
+        <img ng-hide="paidRemoved" id="paid" src='images\paid.png' alt="your image" width="100" />
+        <div>
+          <div class="noPrint" ng-hide="printMode">
+            <a onclick="togglePaid()"  href >Show/Hide Paid</a>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="row infos">
       <div class="col-xs-6">
@@ -94,6 +105,10 @@
         <div class="col-xs-10 text-right">Grand Total:</div>
         <div class="col-xs-2 text-right">{{calculateGrandTotal() | currency: currencySymbol}}</div>
       </div>
+      <div class="row">
+        <div class="col-xs-1 text-left">Notes:</div>
+        <div class="col-xs-8 text-left textA"><textarea name="note" id="note" cols="80" rows="3" >Set custom margins when printing to remove unwanted stuff on page</textarea></div>
+      </div>
     </div>
     <div class="row noPrint actions">
       <a href="#" class="btn btn-primary" ng-show="printMode" ng-click="printInfo()">Print</a>
@@ -110,5 +125,7 @@
     <span class="love">&#9829;</span> in Toronto by
     <a href="https://metawarelabs.com/?utm_source=angular_invoicing">Metaware Labs Inc.</a>
   </div> -->
+
+
 </body>
 </html>
