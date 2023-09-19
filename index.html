@@ -98,7 +98,7 @@
         <div class="col-xs-2 text-right">{{invoiceSubTotal() | currency: currencySymbol}}</div>
       </div>
       <div class="row">
-        <div class="col-xs-10 text-right">Tax(%): <input ng-model="invoice.tax" ng-validate="number" style="width:43px"></div>
+        <div class="col-xs-10 text-right">Tax(%): <input ng-model="invoice.tax" ng-validate="number" style="width:23px"></div>
         <div class="col-xs-2 text-right">{{calculateTax() | currency: currencySymbol}}</div>
       </div>
       <div class="row">
